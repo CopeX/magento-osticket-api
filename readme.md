@@ -8,7 +8,8 @@ Facts
 
 Description
 -----------
-Send the contact form data to the API of OSticket
+This Magento 1 Module send the contact form data to the API of OSticket.
+
 
 
 Compatibility
