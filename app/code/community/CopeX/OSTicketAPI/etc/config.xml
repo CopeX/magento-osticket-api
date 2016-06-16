@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <CopeX_OSTicketAPI>
+            <version>1.0.0</version>
+        </CopeX_OSTicketAPI>
+    </modules>
+    <global>
+        <helpers>
+            <copex_osticketapi>
+                <class>CopeX_OSTicketAPI_Helper</class>
+            </copex_osticketapi>
+        </helpers>
+        <models>
+            <copex_osticketapi>
+                <class>CopeX_OSTicketAPI_Model</class>
+            </copex_osticketapi>
+        </models>
+        <events>
+            <controller_action_postdispatch_contacts_index_post>
+                <observers>
+                    <copex_osticketapi>
+                        <class>copex_osticketapi/observer</class>
+                        <method>sendDataToOSTicket</method>
+                    </copex_osticketapi>
+                </observers>
+            </controller_action_postdispatch_contacts_index_post>
+        </events>
+    </global>
+</config>
