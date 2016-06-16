@@ -16,7 +16,7 @@ class CopeX_OSTicketAPI_Model_Observer extends Mage_Core_Model_Observer
      */
     public function sendDataToOSTicket(Varien_Event_Observer $observer)
     {
-        if (!Mage::getStoreConfig('copex_osticketapi/settings/enabled')) {
+        if (!Mage::getStoreConfig('osticketapi/settings/enabled')) {
             return;
         }
 
@@ -27,18 +27,18 @@ class CopeX_OSTicketAPI_Model_Observer extends Mage_Core_Model_Observer
         }
 
         $config = array(
-            'url' => Mage::getStoreConfig('copex_osticketapi/settings/url'),// URL to site.tld/api/tickets.json
-            'key' => Mage::getStoreConfig('copex_osticketapi/settings/api_key')  // API Key goes here
+            'url' => Mage::getStoreConfig('osticketapi/settings/url'),// URL to site.tld/api/tickets.json
+            'key' => Mage::getStoreConfig('osticketapi/settings/api_key')  // API Key goes here
         );
 
         $data = array(
             'name' => $post['name'],
             'email' => $post['email'],
-            'subject' => Mage::getStoreConfig('copex_osticketapi/settings/subject'),
+            'subject' => Mage::getStoreConfig('osticketapi/settings/subject'),
             'message' => strip_tags($post['comment']),
             'ip' => $_SERVER['REMOTE_ADDR'],
-            'topicId' => Mage::getStoreConfig('copex_osticketapi/settings/topic_id'),
-            'deptId' => Mage::getStoreConfig('copex_osticketapi/settings/dept_id'),
+            'topicId' => Mage::getStoreConfig('osticketapi/settings/topic_id'),
+            'deptId' => Mage::getStoreConfig('osticketapi/settings/dept_id'),
         );
 
         $ch = curl_init();
