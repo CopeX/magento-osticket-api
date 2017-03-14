@@ -1,0 +1,13 @@
+{
+    "name": "CopeX/magento-osticket-api",
+    "license": "GPL2",
+    "type": "magento-module",
+    "homepage": "https://github.com/CopeX/magento-osticket-api",
+    "description": "OS Ticket Module, allows you to put requests from contact form to OSTicket",
+    "authors": [
+        {
+            "name": "Roman Hutterer",
+			"name": "Stephan Kast"
+        }
+    ]
+}
